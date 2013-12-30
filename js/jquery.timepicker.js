@@ -26,7 +26,7 @@ Date.prototype.dayNames = [
 ];
 
 Date.prototype.getDayName = function() {
-    return this.dayNames[this.getDay()];
+    return this.dayNames[this.getUTCDay()];
 };
 
 Date.prototype.getShortDayName = function ()
@@ -65,7 +65,7 @@ Date.prototype.toMysqlDate = function()
 			text = text.replace('monthName', date.getMonthName());
 			text = text.replace('shortDayName', date.getShortDayName());
 			text = text.replace('dayName', date.getDayName());
-			text = text.replace('date', date.getDate());
+			text = text.replace('date', date.getUTCDate());
 
 			return text;
 		}
